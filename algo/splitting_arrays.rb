@@ -1,7 +1,22 @@
-# Complete the method called split_array, which two parameters, the first being an array, and the second being an integer. The method will then create an array of other arrays, each one being the size of the indicated by the second parameter. See the driver code for examples.
+# Complete the method called split_array, which two parameters, the first being
+# an array, and the second being an integer. The method will then create an array
+# of other arrays, each one being the size of the indicated by the second parameter.
+# See the driver code for examples.
 
 def split_array(array, array_size)
-
+  new_array = []
+  i = 0
+  push_count = 0
+  while push_count < array.length
+    new_array.push(array.shift)
+    i += 1
+    if new_array.length == array_size
+      array.push(new_array)
+      new_array = []
+      push_count += 1
+    end
+  end
+  array
 end
 
 # Driver code - don't touch anything below this line.
