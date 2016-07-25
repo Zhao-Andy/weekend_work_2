@@ -3,23 +3,28 @@
 # A palindrome is a word that reads the same both forwards and backwards.
 # Examples: eye, madam, racecar
 
+# Original code:
+# def palindrome?(string)
+#   array = string.split("")
+#   a = 0
+#   z = array.length - 1
+#   all_true = false
+#   true_count = 0
+#   array.length.times do
+#     if array[a] == array[z]
+#       true_count += 1
+#       a += 1
+#       z -= 1
+#     end
+#     if true_count == array.length
+#       all_true  true
+#     end
+#   end
+#   all_true
+# end
+
 def palindrome?(string)
-  array = string.split("")
-  a = 0
-  z = array.length - 1
-  all_true = false
-  true_count = 0
-  array.length.times do
-    if array[a] == array[z]
-      true_count += 1
-      a += 1
-      z -= 1
-    end
-    if true_count == array.length
-      all_true = true
-    end
-  end
-  all_true
+ string == string.reverse
 end
 
 # Driver code - don't touch anything below this line.
